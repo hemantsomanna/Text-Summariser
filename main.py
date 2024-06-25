@@ -1,6 +1,7 @@
 
-from textSummarizer.logging import logger
+from textsummariser.logging import logger
 
+logger.info("WELCOME")
 
 
 

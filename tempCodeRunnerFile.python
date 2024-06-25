@@ -1,0 +1,58 @@
+from transformers import Trainer, TrainingArguments, DataCollatorForSeq2Seq
+from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
+from datasets import load_dataset
+import torch
+import nltk
+nltk.download('punkt')
+
+# Load the PEGASUS model and tokenizer
+model_ckpt = "google/pegasus-large"
+tokenizer = AutoTokenizer.from_pretrained(model_ckpt)
+model_pegasus = AutoModelForSeq2SeqLM.from_pretrained(model_ckpt)
+
+# Load and prepare the SAMSum dataset with trust_remote_code=True
+dataset_samsum = load_dataset("samsum", trust_remote_code=True)
+
+def convert_examples_to_features(example_batch):
+    input_encodings = tokenizer(example_batch['dialogue'], max_length=1024, truncation=True)
+    with tokenizer.as_target_tokenizer():
+        target_encodings = tokenizer(example_batch['summary'], max_length=128, truncation=True)
+
+    return {
+        'input_ids': input_encodings['input_ids'],
+        'attention_mask': input_encodings['attention_mask'],
+        'labels': target_encodings['input_ids']
+    }
+
+# Tokenize the dataset
+dataset_samsum = dataset_samsum.map(convert_examples_to_features, batched=True)
+dataset_samsum.set_format(type='torch', columns=['input_ids', 'attention_mask', 'labels'])
+
+# Define training arguments
+training_args = TrainingArguments(
+    output_dir="./results",
+    evaluation_strategy="epoch",
+    learning_rate=2e-5,
+    per_device_train_batch_size=2,
+    per_device_eval_batch_size=2,
+    weight_decay=0.01,
+    save_total_limit=3,
+    num_train_epochs=3
+)
+
+# Create a data collator
+seq2seq_data_collator = DataCollatorForSeq2Seq(tokenizer, model=model_pegasus)
+
+# Initialize Trainer
+trainer = Trainer(
+    model=model_pegasus,
+    args=training_args,
+    train_dataset=dataset_samsum['train'],
+    eval_dataset=dataset_samsum['validation'],
+    data_collator=seq2seq_data_collator,
+    tokenizer=tokenizer
+)
+
+# Start training
+trainer.train()
+

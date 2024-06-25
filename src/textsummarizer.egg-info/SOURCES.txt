@@ -1,0 +1,16 @@
+README.md
+setup.py
+src/textsummariser/__init__.py
+src/textsummariser/config/__init__.py
+src/textsummariser/config/configuration.py
+src/textsummariser/conponents/__init__.py
+src/textsummariser/constants/__init__.py
+src/textsummariser/entity/__init__.py
+src/textsummariser/logging/__init__.py
+src/textsummariser/pipeline/__init__.py
+src/textsummariser/utils/__init__.py
+src/textsummariser/utils/common.py
+src/textsummarizer.egg-info/PKG-INFO
+src/textsummarizer.egg-info/SOURCES.txt
+src/textsummarizer.egg-info/dependency_links.txt
+src/textsummarizer.egg-info/top_level.txt
