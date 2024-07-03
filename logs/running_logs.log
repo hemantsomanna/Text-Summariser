@@ -96,3 +96,83 @@ Source-Age: 24
 
 ]
 [2024-07-03 16:02:26,312: INFO: main: COMPLETED]
+[2024-07-03 16:22:53,660: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-03 16:22:53,672: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-03 16:22:53,673: INFO: common: created directory at: artifacts]
+[2024-07-03 16:29:49,283: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-03 16:29:49,293: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-03 16:29:49,294: INFO: common: created directory at: artifacts]
+[2024-07-03 16:29:49,296: INFO: common: created directory at: artifacts/data_validation]
+[2024-07-03 23:12:14,021: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:12:14,021: ERROR: main: name 'DataValidationTrainingPipeline' is not defined]
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 8, in <module>
+    data_validation = DataValidationTrainingPipeline()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'DataValidationTrainingPipeline' is not defined. Did you mean: 'DataIngestionTrainingPipeline'?
+[2024-07-03 23:12:51,867: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:12:51,867: ERROR: main: type object 'DataValiadtion' has no attribute 'main']
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 9, in <module>
+    data_validation .main()
+    ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DataValiadtion' has no attribute 'main'
+[2024-07-03 23:12:59,455: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:12:59,456: ERROR: main: DataValiadtion.__init__() missing 1 required positional argument: 'config']
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 8, in <module>
+    data_validation = DataValiadtion()
+                      ^^^^^^^^^^^^^^^^
+TypeError: DataValiadtion.__init__() missing 1 required positional argument: 'config'
+[2024-07-03 23:14:23,334: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:14:23,335: ERROR: main: name 'DataValiadtionTrainingPipeline' is not defined]
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 8, in <module>
+    data_validation = DataValiadtionTrainingPipeline()
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'DataValiadtionTrainingPipeline' is not defined. Did you mean: 'DataIngestionTrainingPipeline'?
+[2024-07-03 23:15:22,528: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:15:22,529: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-03 23:15:22,531: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-03 23:15:22,531: INFO: common: created directory at: artifacts]
+[2024-07-03 23:15:22,532: INFO: common: created directory at: artifacts/data_validation]
+[2024-07-03 23:15:22,532: ERROR: main: name 'DataValidation' is not defined]
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 9, in <module>
+    data_validation .main()
+  File "C:\Users\heman\OneDrive\Desktop\Text Summariser\src\textsummariser\pipeline\stage2data_validation.py", line 13, in main
+    data_validation = DataValidation(config=data_validation_config)
+                      ^^^^^^^^^^^^^^
+NameError: name 'DataValidation' is not defined. Did you mean: 'DataValiadtion'?
+[2024-07-03 23:17:40,079: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:17:40,081: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-03 23:17:40,082: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-03 23:17:40,083: INFO: common: created directory at: artifacts]
+[2024-07-03 23:17:40,084: INFO: common: created directory at: artifacts/data_validation]
+[2024-07-03 23:17:40,084: ERROR: main: 'DataValidation' object has no attribute 'download_file']
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 9, in <module>
+    data_validation .main()
+  File "C:\Users\heman\OneDrive\Desktop\Text Summariser\src\textsummariser\pipeline\stage2data_validation.py", line 14, in main
+    data_validation.download_file()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DataValidation' object has no attribute 'download_file'
+[2024-07-03 23:23:06,388: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:23:06,390: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-03 23:23:06,391: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-03 23:23:06,391: INFO: common: created directory at: artifacts]
+[2024-07-03 23:23:06,392: INFO: common: created directory at: artifacts/data_validation]
+[2024-07-03 23:23:06,393: ERROR: main: name 'DataValiadtion' is not defined]
+Traceback (most recent call last):
+  File "c:\Users\heman\OneDrive\Desktop\Text Summariser\main.py", line 9, in <module>
+    data_validation .main()
+  File "C:\Users\heman\OneDrive\Desktop\Text Summariser\src\textsummariser\pipeline\stage2data_validation.py", line 13, in main
+    data_validation = DataValiadtion(config=data_validation_config)
+                      ^^^^^^^^^^^^^^
+NameError: name 'DataValiadtion' is not defined. Did you mean: 'DataValidation'?
+[2024-07-03 23:23:33,947: INFO: main: {'Data Validation Stage'}]
+[2024-07-03 23:23:33,949: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-07-03 23:23:33,950: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-07-03 23:23:33,950: INFO: common: created directory at: artifacts]
+[2024-07-03 23:23:33,950: INFO: common: created directory at: artifacts/data_validation]
+[2024-07-03 23:23:33,952: INFO: main: COMPLETED]
